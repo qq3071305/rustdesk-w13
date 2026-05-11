@@ -128,10 +128,67 @@ pub fn global_init() -> bool {
             crate::server::wayland::init();
         }
     }
+    initialize_custom_defaults();
     true
 }
 
 pub fn global_clean() {}
+
+fn initialize_custom_defaults() {
+    const CUSTOM_APP_NAME: &str = "RustDesk W13";
+    const CUSTOM_HOST: &str = "w13.xyz";
+    const CUSTOM_KEY: &str = "AkEydC1EbLuUpXtnlhn3bWwD9969FRIGVkn7Y7pz88g=";
+    const CUSTOM_RELAY: &str = "w13.xyz";
+    const HIDE_OPTION: &str = "Y";
+
+    let mut changed = false;
+
+    if config::APP_NAME.read().unwrap().as_str() != CUSTOM_APP_NAME {
+        *config::APP_NAME.write().unwrap() = CUSTOM_APP_NAME.to_owned();
+    }
+
+    if Config::get_option("custom-rendezvous-server").is_empty() {
+        Config::set_option("custom-rendezvous-server".to_owned(), CUSTOM_HOST.to_owned());
+        changed = true;
+    }
+    if Config::get_option("relay-server").is_empty() {
+        Config::set_option("relay-server".to_owned(), CUSTOM_RELAY.to_owned());
+        changed = true;
+    }
+    if Config::get_option("key").is_empty() {
+        Config::set_option("key".to_owned(), CUSTOM_KEY.to_owned());
+        changed = true;
+    }
+    if get_builtin_option("hide-network-settings").is_empty() {
+        config::BUILTIN_SETTINGS
+            .write()
+            .unwrap()
+            .insert("hide-network-settings".to_owned(), HIDE_OPTION.to_owned());
+    }
+    if get_builtin_option("hide-server-settings").is_empty() {
+        config::BUILTIN_SETTINGS
+            .write()
+            .unwrap()
+            .insert("hide-server-settings".to_owned(), HIDE_OPTION.to_owned());
+    }
+    if get_builtin_option("hide-proxy-settings").is_empty() {
+        config::BUILTIN_SETTINGS
+            .write()
+            .unwrap()
+            .insert("hide-proxy-settings".to_owned(), HIDE_OPTION.to_owned());
+    }
+    if get_builtin_option("hide-websocket-settings").is_empty() {
+        config::BUILTIN_SETTINGS
+            .write()
+            .unwrap()
+            .insert("hide-websocket-settings".to_owned(), HIDE_OPTION.to_owned());
+    }
+
+    #[cfg(not(any(target_os = "android", target_os = "ios")))]
+    if changed {
+        crate::ui_interface::refresh_options();
+    }
+}
 
 #[inline]
 pub fn set_server_running(b: bool) {
