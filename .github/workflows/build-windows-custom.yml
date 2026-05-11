@@ -1,4 +1,5 @@
 name: Build Custom Windows Installer
+run-name: Build Custom Windows Installer
 
 on:
   workflow_dispatch:
