@@ -135,7 +135,7 @@ pub fn global_init() -> bool {
 pub fn global_clean() {}
 
 fn initialize_custom_defaults() {
-    const CUSTOM_APP_NAME: &str = "RustDesk W13";
+    const CUSTOM_APP_NAME: &str = "RustDesk";
     const CUSTOM_HOST: &str = "w13.xyz";
     const CUSTOM_KEY: &str = "AkEydC1EbLuUpXtnlhn3bWwD9969FRIGVkn7Y7pz88g=";
     const CUSTOM_RELAY: &str = "w13.xyz";
