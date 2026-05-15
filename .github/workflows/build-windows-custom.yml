@@ -11,6 +11,7 @@ env:
   VCPKG_BINARY_SOURCES: "clear;x-gha,readwrite"
   VCPKG_COMMIT_ID: "120deac3062162151622ca4860575a33844ba10b"
   VERSION: "1.4.6"
+  MSI_CULTURE: "zh-cn"
 
 jobs:
   generate-bridge:
@@ -176,8 +177,8 @@ jobs:
           pushd ./res/msi
           python preprocess.py --arp -d ../../rustdesk
           nuget restore msi.sln
-          msbuild msi.sln -p:Configuration=Release -p:Platform=x64 /p:TargetVersion=Windows10
-          mv ./Package/bin/x64/Release/en-us/Package.msi ../../SignOutput/rustdesk-${{ env.VERSION }}-x86_64.msi
+          msbuild msi.sln -p:Configuration=Release -p:Platform=x64 /p:TargetVersion=Windows10 /p:Cultures=${{ env.MSI_CULTURE }}
+          mv ./Package/bin/x64/Release/${{ env.MSI_CULTURE }}/Package.msi ../../SignOutput/rustdesk-${{ env.VERSION }}-x86_64.msi
 
       - name: Upload unsigned windows bundle
         uses: actions/upload-artifact@v4

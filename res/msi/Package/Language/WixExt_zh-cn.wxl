@@ -1,0 +1,24 @@
+<!--
+   Copyright (c) Microsoft Corporation.  All rights reserved.
+-->
+<!--
+Adapted by RustDesk for Custom Dialogs insertions
+-->
+<WixLocalization Culture="zh-cn"
+	xmlns="http://wixtoolset.org/schemas/v4/wxl">
+
+	<!-- Firewall Extension needs translation here -->
+	<String Id="msierrFirewallCannotConnect" Overridable="yes" Value="&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x5230; Windows &#x9632;&#x706B;&#x5899;&#x3002;([2]   [3]   [4]   [5])" />
+
+	<String Id="WixSchedFirewallExceptionsInstall" Overridable="yes" Value="&#x6B63;&#x5728;&#x914D;&#x7F6E; Windows &#x9632;&#x706B;&#x5899;" />
+	<String Id="WixSchedFirewallExceptionsUninstall" Overridable="yes" Value="&#x6B63;&#x5728;&#x914D;&#x7F6E; Windows &#x9632;&#x706B;&#x5899;" />
+	<String Id="WixRollbackFirewallExceptionsInstall" Overridable="yes" Value="&#x6B63;&#x5728;&#x56DE;&#x6EDA; Windows &#x9632;&#x706B;&#x5899;&#x914D;&#x7F6E;" />
+	<String Id="WixExecFirewallExceptionsInstall" Overridable="yes" Value="&#x6B63;&#x5728;&#x5B89;&#x88C5; Windows &#x9632;&#x706B;&#x5899;&#x914D;&#x7F6E;" />
+	<String Id="WixRollbackFirewallExceptionsUninstall" Overridable="yes" Value="&#x6B63;&#x5728;&#x56DE;&#x6EDA; Windows &#x9632;&#x706B;&#x5899;&#x914D;&#x7F6E;" />
+	<String Id="WixExecFirewallExceptionsUninstall" Overridable="yes" Value="&#x6B63;&#x5728;&#x5378;&#x8F7D; Windows &#x9632;&#x706B;&#x5899;&#x914D;&#x7F6E;" />
+
+	<!-- Util Extension does not need translation here, because it is already in official WiX Toolkit -->
+	<String Id="msierrSecureObjectsFailedCreateSD" Overridable="yes" Value="&#x65E0;&#x6CD5;&#x521B;&#x5EFA;&#x5B89;&#x5168;&#x63CF;&#x8FF0;&#x7B26; [3]\[4]&#xFF0C;&#x9519;&#x8BEF;: [2]" />
+	<String Id="msierrSecureObjectsFailedSet" Overridable="yes" Value="&#x65E0;&#x6CD5;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x5B89;&#x5168;&#x63CF;&#x8FF0;&#x7B26; [3]&#xFF0C;&#x9519;&#x8BEF;: [2]" />
+	<String Id="msierrSecureObjectsUnknownType" Overridable="yes" Value="&#x672A;&#x77E5;&#x5BF9;&#x8C61;&#x7C7B;&#x578B; [3]&#xFF0C;&#x9519;&#x8BEF;: [2]" />
+</WixLocalization>

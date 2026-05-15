@@ -1,0 +1,56 @@
+<!--
+This file contains the declaration of all the localizable strings.
+-->
+<WixLocalization Culture="zh-cn" Codepage="936"
+	xmlns="http://wixtoolset.org/schemas/v4/wxl">
+
+	<String Id="SummaryCodepage" Value="936" />
+	<String Id="ProductLanguage" Value="2052" />
+
+	<!-- General strings -->
+	<String Id="DowngradeError" Value="&#x5DF2;&#x5B89;&#x88C5;&#x8F83;&#x65B0;&#x7248;&#x672C;&#x7684; [ProductName]&#x3002;" />
+
+	<String Id="AR_Comment" Value="RustDesk" />
+
+	<String Id="F_App" Value="RustDesk" />
+	<String Id="F_App_Desc" Value="RustDesk &#x4E3B;&#x7A0B;&#x5E8F;&#x5B89;&#x88C5;&#x3002;" />
+
+	<String Id="SC_Uninstall" Value="&#x5378;&#x8F7D; RustDesk" />
+	<String Id="SC_Uninstall_Desc" Value="&#x4ECE;&#x8FD9;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x79FB;&#x9664; RustDesk &#x6216;&#x5176;&#x90E8;&#x5206;&#x7EC4;&#x4EF6;" />
+
+	<!-- Client related strings -->
+	<String Id="F_Client" Value="&#x5BA2;&#x6237;&#x7AEF;" />
+	<String Id="F_Client_Desc" Value="&#x7528;&#x6237;&#x754C;&#x9762;&#x3002;" />
+	<String Id="F_Client_Plugins" Value="&#x63D2;&#x4EF6;" />
+	<String Id="F_Client_Plugins_Desc" Value="&#x5BA2;&#x6237;&#x7AEF;&#x63D2;&#x4EF6;&#x3002;" />
+	<String Id="F_LAVFilters" Value="LAV Filters" />
+	<String Id="F_LAVFilters_Desc" Value="&#x63A8;&#x8350;&#x7528;&#x4E8E;&#x83B7;&#x5F97;&#x66F4;&#x4F73;&#x97F3;&#x89C6;&#x9891;&#x4F53;&#x9A8C;&#x7684; DirectShow &#x8FC7;&#x6EE4;&#x5668;&#x3002;" />
+
+	<String Id="SC_Client" Value="RustDesk" />
+	<String Id="SC_Client_Desc" Value="&#x542F;&#x52A8; RustDesk&#x3002;" />
+
+	<String Id="SC_Client_Tray" Value="RustDesk &#x6258;&#x76D8;" />
+	<String Id="SC_Client_Tray_Desc" Value="&#x542F;&#x52A8; RustDesk &#x6258;&#x76D8;&#x3002;" />
+
+	<!-- Server related strings -->
+	<String Id="F_Server" Value="&#x670D;&#x52A1;&#x7AEF;" />
+	<String Id="F_Server_Desc" Value="RustDesk &#x7684;&#x670D;&#x52A1;&#x7AEF;&#x90E8;&#x5206;&#x3002;" />
+	<String Id="F_Server_Plugins" Value="&#x63D2;&#x4EF6;" />
+	<String Id="F_Server_Plugins_Desc" Value="&#x670D;&#x52A1;&#x7AEF;&#x63D2;&#x4EF6;&#x3002;" />
+
+	<String Id="Service_DisplayName" Value="RustDesk &#x670D;&#x52A1;" />
+	<String Id="Service_Description" Value="&#x6B64;&#x670D;&#x52A1;&#x7528;&#x4E8E;&#x8FD0;&#x884C; RustDesk &#x670D;&#x52A1;&#x7AEF;&#x3002;" />
+
+	<!-- Launch Conditions -->
+	<String Id="LC_OS" Value="[ProductName] &#x81F3;&#x5C11;&#x9700;&#x8981; Windows 7 / 2008 R2 &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;" />
+	<String Id="LC_ADMIN" Value="&#x5B89;&#x88C5; [ProductName] &#x9700;&#x8981;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;&#x3002;" />
+
+	<!-- User Interfaces -->
+	<String Id="AnotherAppDialogTitle" Value="&#x53D6;&#x6D88;&#x5B89;&#x88C5;&#x3002;" />
+	<String Id="AnotherAppDialogDescription" Value="&#x5F53;&#x524D;&#x5E94;&#x7528;&#x662F;&#x901A;&#x8FC7;&#x81EA;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#x5B89;&#x88C5;&#x7684;&#xFF0C;&#x8BF7;&#x5148;&#x5378;&#x8F7D;&#x540E;&#x518D;&#x7EE7;&#x7EED;&#x3002;" />
+
+	<String Id="MyInstallDirDlgDesktopShortcuts" Value="&#x521B;&#x5EFA;&#x684C;&#x9762;&#x56FE;&#x6807;" />
+	<String Id="MyInstallDirDlgStartMenuShortcuts" Value="&#x521B;&#x5EFA;&#x5F00;&#x59CB;&#x83DC;&#x5355;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;" />
+	<String Id="MyInstallDirDlgPrinter" Value="&#x5B89;&#x88C5; RustDesk &#x6253;&#x5370;&#x673A;" />
+
+</WixLocalization>
