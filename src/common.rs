@@ -144,14 +144,14 @@ fn initialize_custom_defaults() {
         *config::APP_NAME.write().unwrap() = CUSTOM_APP_NAME.to_owned();
     }
 
-    if Config::get_option("custom-rendezvous-server") == CUSTOM_HOST {
-        Config::set_option("custom-rendezvous-server".to_owned(), "".to_owned());
+    if Config::get_option("custom-rendezvous-server").is_empty() {
+        Config::set_option("custom-rendezvous-server".to_owned(), CUSTOM_HOST.to_owned());
     }
-    if Config::get_option("relay-server") == CUSTOM_RELAY {
-        Config::set_option("relay-server".to_owned(), "".to_owned());
+    if Config::get_option("relay-server").is_empty() {
+        Config::set_option("relay-server".to_owned(), CUSTOM_RELAY.to_owned());
     }
-    if Config::get_option("key") == CUSTOM_KEY {
-        Config::set_option("key".to_owned(), "".to_owned());
+    if Config::get_option("key").is_empty() {
+        Config::set_option("key".to_owned(), CUSTOM_KEY.to_owned());
     }
 }
 
