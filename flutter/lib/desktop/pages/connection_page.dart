@@ -36,6 +36,8 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
   final _svcStopped = Get.find<RxBool>(tag: 'stop-service');
   final _svcIsUsingPublicServer = true.obs;
   Timer? _updateTimer;
+  bool get _hideServerSettings =>
+      bind.mainGetBuildinOption(key: kOptionHideServerSetting) == 'Y';
 
   double get em => 14.0;
   double? get height => bind.isIncomingOnly() ? null : em * 3;
@@ -80,7 +82,8 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
 
     setupServerWidget() => Flexible(
           child: Offstage(
-            offstage: !(!_svcStopped.value &&
+            offstage: _hideServerSettings ||
+                !(!_svcStopped.value &&
                 stateGlobal.svcStatus.value == SvcStatus.ready &&
                 _svcIsUsingPublicServer.value),
             child: Row(

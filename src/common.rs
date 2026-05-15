@@ -139,10 +139,16 @@ fn initialize_custom_defaults() {
     const CUSTOM_HOST: &str = "w13.xyz";
     const CUSTOM_KEY: &str = "AkEydC1EbLuUpXtnlhn3bWwD9969FRIGVkn7Y7pz88g=";
     const CUSTOM_RELAY: &str = "w13.xyz";
+    const HIDE_SERVER_SETTINGS: &str = "hide-server-settings";
 
     if config::APP_NAME.read().unwrap().as_str() != CUSTOM_APP_NAME {
         *config::APP_NAME.write().unwrap() = CUSTOM_APP_NAME.to_owned();
     }
+
+    config::BUILTIN_SETTINGS
+        .write()
+        .unwrap()
+        .insert(HIDE_SERVER_SETTINGS.to_owned(), "Y".to_owned());
 
     if Config::get_option("custom-rendezvous-server").is_empty() {
         Config::set_option("custom-rendezvous-server".to_owned(), CUSTOM_HOST.to_owned());
